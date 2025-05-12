@@ -1,0 +1,77 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* web_record_viewers
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-12 05:36+0000\n"
+"PO-Revision-Date: 2025-05-12 05:36+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: web_record_viewers
+#: model:ir.model.constraint,message:web_record_viewers.constraint_record_viewer_user_model_record_uniq
+msgid "A user can only be marked as viewing a record once."
+msgstr "Ein Benutzer kann nur einmal als Betrachter eines Datensatzes markiert werden."
+
+#. module: web_record_viewers
+#: model:ir.model,name:web_record_viewers.model_record_viewer
+msgid "Active Record Viewer"
+msgstr "Aktiver Datensatz-Betrachter"
+
+#. module: web_record_viewers
+#. odoo-javascript
+#: code:addons/web_record_viewers/static/src/views/form/form_controller.xml:0
+msgid "Also viewing:"
+msgstr "Aktive Nutzer:"
+
+#. module: web_record_viewers
+#: model:ir.model.fields,field_description:web_record_viewers.field_record_viewer__display_name
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: web_record_viewers
+#: model:ir.model.fields,field_description:web_record_viewers.field_record_viewer__id
+msgid "ID"
+msgstr "ID"
+
+#. module: web_record_viewers
+#: model:ir.model.fields,field_description:web_record_viewers.field_record_viewer__res_model
+msgid "Model"
+msgstr "Model"
+
+#. module: web_record_viewers
+#: model:ir.model.fields,field_description:web_record_viewers.field_record_viewer__user_name
+msgid "Name"
+msgstr "Name"
+
+#. module: web_record_viewers
+#: model:ir.actions.server,name:web_record_viewers.cron_cleanup_stale_viewers_ir_actions_server
+msgid "Record viewers: Cleanup stale viewers"
+msgstr "Datensatz-Betrachter: Veraltete Einträge bereinigen"
+
+#. module: web_record_viewers
+#: model:ir.model.fields,field_description:web_record_viewers.field_record_viewer__res_id
+msgid "Res"
+msgstr "Res"
+
+#. module: web_record_viewers
+#: model:ir.model.fields,field_description:web_record_viewers.field_record_viewer__res_model_id
+msgid "Res Model"
+msgstr "Res Model"
+
+#. module: web_record_viewers
+#: model:ir.model.fields,field_description:web_record_viewers.field_record_viewer__user_id
+msgid "User"
+msgstr "Benutzer"
+
+#. module: web_record_viewers
+#: model:ir.model.fields,field_description:web_record_viewers.field_record_viewer__write_date
+msgid "Write Date"
+msgstr "Änderungsdatum"

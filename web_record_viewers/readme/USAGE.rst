@@ -1,0 +1,3 @@
+Once installed, the ``web_record_viewers`` module automatically enables real-time viewer tracking on **all form views** in the backend. When you open a form, a badge strip appears just above the form header indicating who else is actively viewing the same record.
+
+There is no configuration required after installation — the feature is immediately active for all users with appropriate read access to the records.

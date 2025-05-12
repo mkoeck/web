@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="web_record_viewers.FormView" t-inherit="web.FormView" t-inherit-mode="extension">
+        <xpath expr="//Layout/t[@t-component='props.Renderer']" position="before">
+            <div class="o_form_viewers_strip" t-if="model.root.resId">
+                <div class="container o_form_viewers_container">
+                    <small class="text-muted me-1">Also viewing:</small>
+                    <t t-foreach="viewerState.viewers" t-as="viewer" t-key="viewer.id">
+                        <t t-if="viewer.id !== props.context.uid">
+                            <span class="badge rounded-pill bg-secondary text-bg-secondary me-1" t-att-title="viewer.name" style="cursor: default;">
+                                <i class="fa fa-user me-1" aria-hidden="true"/>
+                                <t t-esc="viewer.name.split(' ')[0]"/>
+                            </span>
+                        </t>
+                    </t>
+                </div>
+            </div>
+        </xpath>
+    </t>
+</templates>

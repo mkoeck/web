@@ -1,0 +1,533 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils: https://docutils.sourceforge.io/" />
+<title>Web Record Viewers</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 9511 2024-01-13 09:50:07Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+Despite the name, some widely supported CSS2 features are used.
+
+See https://docutils.sourceforge.io/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+.subscript {
+  vertical-align: sub;
+  font-size: smaller }
+
+.superscript {
+  vertical-align: super;
+  font-size: smaller }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, .code .error {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left, table.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right, table.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.align-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+.align-top    {
+  vertical-align: top }
+
+.align-middle {
+  vertical-align: middle }
+
+.align-bottom {
+  vertical-align: bottom }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+pre.code .ln { color: gray; } /* line numbers */
+pre.code, code { background-color: #eeeeee }
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic, pre.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+/* "booktabs" style (no vertical lines) */
+table.docutils.booktabs {
+  border: 0px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.docutils.booktabs * {
+  border: 0px;
+}
+table.docutils.booktabs th {
+  border-bottom: thin solid;
+  text-align: left;
+}
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="web-record-viewers">
+<h1 class="title">Web Record Viewers</h1>
+
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! This file is generated by oca-gen-addon-readme !!
+!! changes will be overwritten.                   !!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! source digest: sha256:380948d1d415a7c3622c7d0c4736a2039251fea8998baeebfe2e90ee4d161c8d
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<p><a class="reference external image-reference" href="https://odoo-community.org/page/development-status"><img alt="Alpha" src="https://img.shields.io/badge/maturity-Alpha-red.png" /></a> <a class="reference external image-reference" href="http://www.gnu.org/licenses/agpl-3.0-standalone.html"><img alt="License: AGPL-3" src="https://img.shields.io/badge/license-AGPL--3-blue.png" /></a> <a class="reference external image-reference" href="https://github.com/OCA/web/tree/18.0/web_record_viewers"><img alt="OCA/web" src="https://img.shields.io/badge/github-OCA%2Fweb-lightgray.png?logo=github" /></a> <a class="reference external image-reference" href="https://translation.odoo-community.org/projects/web-18-0/web-18-0-web_record_viewers"><img alt="Translate me on Weblate" src="https://img.shields.io/badge/weblate-Translate%20me-F47D42.png" /></a> <a class="reference external image-reference" href="https://runboat.odoo-community.org/builds?repo=OCA/web&amp;target_branch=18.0"><img alt="Try me on Runboat" src="https://img.shields.io/badge/runboat-Try%20me-875A7B.png" /></a></p>
+<p>This module enables real-time awareness of who is currently viewing a specific record in the Odoo backend interface. When users open a form view of any record, a non-intrusive badge strip is shown listing the names of other active viewers. This feature enhances team collaboration by avoiding edit conflicts and promoting transparency.</p>
+<div class="section" id="features">
+<h1>Features</h1>
+<ul class="simple">
+<li>⏱️ <strong>Live Viewer Tracking</strong>:
+Displays which users are actively viewing the same record on form views, updated in real time using Odoo’s bus service.</li>
+<li>🔄 <strong>Automatic Session Refresh</strong>:
+Viewer sessions are kept alive via periodic client-side pings (every 30 seconds), ensuring accurate presence detection.</li>
+<li>🚦 <strong>Conflict Minimization</strong>:
+Helps prevent accidental data overwrites in multi-user environments by raising visibility of concurrent access.</li>
+<li>🔐 <strong>Secure Access Control</strong>:
+Viewer data is accessed via controller routes that enforce model-level and record-level read access rules. The underlying <cite>record.viewer</cite> model uses <cite>sudo()</cite> operations internally but only after access validation.</li>
+<li>🧹 <strong>Stale Session Cleanup</strong>:
+A cron job periodically removes expired viewer records (after ~90 seconds) to keep data lean and relevant.</li>
+<li>⚙️ <strong>Generic and Reusable</strong>:
+Works across all models in Odoo by dynamically tracking the model and record ID — no special configuration required.</li>
+</ul>
+</div>
+<div class="section" id="technical-design">
+<h1>Technical Design</h1>
+<ul class="simple">
+<li>The <cite>record.viewer</cite> model stores user, model, and record references along with <cite>write_date</cite> as the activity timestamp.</li>
+<li>Controller endpoints (<cite>GET</cite>, <cite>POST</cite>, <cite>DELETE</cite>) manage session state and are protected by access decorators.</li>
+<li>A frontend patch of <cite>FormController</cite> handles:<ul>
+<li>Session lifecycle (start/stop)</li>
+<li>Viewer polling and bus subscription</li>
+<li>UI rendering of active viewers</li>
+</ul>
+</li>
+<li>Frontend assets include:<ul>
+<li><cite>form_controller.js</cite>: session handling and viewer updates</li>
+<li><cite>form_controller.xml</cite>: viewer badge UI</li>
+<li><cite>form_controller.scss</cite>: styling for viewer display strip</li>
+</ul>
+</li>
+<li>A cron job defined in <cite>ir_cron.xml</cite> periodically removes stale sessions older than 90 seconds and notifies remaining users accordingly.</li>
+</ul>
+</div>
+<div class="section" id="use-cases">
+<h1>Use Cases</h1>
+<ul class="simple">
+<li>Multi-user environments where real-time awareness of record access can help avoid duplication or miscommunication.</li>
+<li>Shared CRM or Helpdesk records where coordination is key.</li>
+<li>Educational or onboarding use where instructors monitor trainee activity.</li>
+</ul>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">This is an alpha version, the data model and design can change at any time without warning.
+Only for development or testing purpose, do not use in production.
+<a class="reference external" href="https://odoo-community.org/page/development-status">More details on development status</a></p>
+</div>
+<p><strong>Table of contents</strong></p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#usage" id="toc-entry-1">Usage</a></li>
+<li><a class="reference internal" href="#known-issues-roadmap" id="toc-entry-2">Known issues / Roadmap</a></li>
+</ul>
+</div>
+<div class="section" id="usage">
+<h2><a class="toc-backref" href="#toc-entry-1">Usage</a></h2>
+<p>Once installed, the <tt class="docutils literal">web_record_viewers</tt> module automatically enables real-time viewer tracking on <strong>all form views</strong> in the backend. When you open a form, a badge strip appears just above the form header indicating who else is actively viewing the same record.</p>
+<p>There is no configuration required after installation — the feature is immediately active for all users with appropriate read access to the records.</p>
+</div>
+<div class="section" id="known-issues-roadmap">
+<h2><a class="toc-backref" href="#toc-entry-2">Known issues / Roadmap</a></h2>
+<p>The following enhancements are planned for future versions of the <tt class="docutils literal">web_record_viewers</tt> module. These aim to expand its versatility, configurability, and user experience while remaining lightweight and unobtrusive.</p>
+</div>
+</div>
+<div class="section" id="support-for-other-view-types">
+<h1>Support for Other View Types</h1>
+<ul class="simple">
+<li>Extend viewer tracking support beyond form views to include:<ul>
+<li>Kanban views</li>
+<li>List (tree) views</li>
+<li>Possibly activity or calendar views</li>
+</ul>
+</li>
+<li>Display viewer indicators contextually in these views, possibly via badges, tooltips, or side panels.</li>
+</ul>
+</div>
+<div class="section" id="improved-ui-ux">
+<h1>Improved UI/UX</h1>
+<ul class="simple">
+<li>Add a tooltip to each viewer badge that displays the full name and, if available, the user’s avatar.</li>
+<li>Improve accessibility and responsiveness of the viewer strip.</li>
+</ul>
+</div>
+<div class="section" id="opt-out-mechanism">
+<h1>Opt-Out Mechanism</h1>
+<ul class="simple">
+<li>Allow users to opt out of viewer visibility (e.g., “Invisible Mode”) through a user preference.</li>
+<li>Option to anonymize viewer display or replace names with generic placeholders if privacy settings are enabled.</li>
+</ul>
+</div>
+<div class="section" id="configuration-for-timeout-and-refresh-interval">
+<h1>Configuration for Timeout and Refresh Interval</h1>
+<ul class="simple">
+<li>Introduce module-level configuration settings (via <cite>ir.config_parameter</cite> or a Settings model) to control:<ul>
+<li>Viewer session timeout duration (default: 45 seconds)</li>
+<li>Frontend ping interval (default: 30 seconds)</li>
+</ul>
+</li>
+<li>Make these values adjustable without requiring source code changes or redeployments.</li>
+</ul>
+<div class="section" id="changelog">
+<h2>Changelog</h2>
+</div>
+<div class="section" id="section-1">
+<h2>18.0.1.0.0 (2025-05-12)</h2>
+<ul class="simple">
+<li>Initial release of <tt class="docutils literal">web_record_viewers</tt>.</li>
+<li>Tracks which users are actively viewing a given record (form views only).</li>
+<li>Viewer data is updated in real time using Odoo’s bus service.</li>
+<li>Adds frontend UI with badge strip showing concurrent viewers.</li>
+<li>Includes server-side cron job for cleaning up stale sessions.</li>
+<li>All access to viewer data is gated through HTTP controllers with enforced model-level and record-level security checks.</li>
+<li>Fully integrated with the Odoo web client using OWL and patching the FormController.</li>
+<li>Adds unittests for core model methods and bus event triggers.</li>
+</ul>
+</div>
+<div class="section" id="bug-tracker">
+<h2>Bug Tracker</h2>
+<p>Bugs are tracked on <a class="reference external" href="https://github.com/OCA/web/issues">GitHub Issues</a>.
+In case of trouble, please check there if your issue has already been reported.
+If you spotted it first, help us to smash it by providing a detailed and welcomed
+<a class="reference external" href="https://github.com/OCA/web/issues/new?body=module:%20web_record_viewers%0Aversion:%2018.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**">feedback</a>.</p>
+<p>Do not contact contributors directly about support or help with technical issues.</p>
+</div>
+<div class="section" id="credits">
+<h2>Credits</h2>
+<div class="section" id="authors">
+<h3>Authors</h3>
+<ul class="simple">
+<li>Michael Köck</li>
+</ul>
+</div>
+<div class="section" id="contributors">
+<h3>Contributors</h3>
+<ul class="simple">
+<li>Michael Köck &lt;<a class="reference external" href="mailto:mkoeck&#64;elektroshopkoeck.com">mkoeck&#64;elektroshopkoeck.com</a>&gt;</li>
+</ul>
+</div>
+<div class="section" id="maintainers">
+<h3>Maintainers</h3>
+<p>This module is maintained by the OCA.</p>
+<a class="reference external image-reference" href="https://odoo-community.org">
+<img alt="Odoo Community Association" src="https://odoo-community.org/logo.png" />
+</a>
+<p>OCA, or the Odoo Community Association, is a nonprofit organization whose
+mission is to support the collaborative development of Odoo features and
+promote its widespread use.</p>
+<p>Current <a class="reference external" href="https://odoo-community.org/page/maintainer-role">maintainer</a>:</p>
+<p><a class="reference external image-reference" href="https://github.com/mkoeck"><img alt="mkoeck" src="https://github.com/mkoeck.png?size=40px" /></a></p>
+<p>This module is part of the <a class="reference external" href="https://github.com/OCA/web/tree/18.0/web_record_viewers">OCA/web</a> project on GitHub.</p>
+<p>You are welcome to contribute. To learn how please visit <a class="reference external" href="https://odoo-community.org/page/Contribute">https://odoo-community.org/page/Contribute</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

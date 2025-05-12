@@ -1,0 +1,19 @@
+.o_form_viewers_strip {
+    padding-top: 8px;
+    border-bottom: 1px solid var(--o-border-color);
+    background-color: var(--o-view-background-color);
+    font-size: 0.85em;
+    box-sizing: border-box;
+    max-width: var(--o-form-renderer-max-width, 1530px);
+    margin-left: 0;
+    margin-right: 0;
+
+    .o_form_viewers_container {
+        display: flex;
+        margin-left: 0;
+        margin-right: 0;
+        align-items: center;
+        padding-left: var(--formView-sheet-padding-x, 1rem);
+        padding-right: var(--formView-sheet-padding-x, 1rem);
+    }
+}
